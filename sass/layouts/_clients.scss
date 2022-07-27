@@ -1,18 +1,30 @@
 .clients__list {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .clients__link {
   display: block;
-  width: 170px;
+  width: 210px;
   height: 92px;
-  gap: 30px;
+
+  @media screen and (min-width: 480px) {
+    width: 210px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 170px;
+  }
 }
 
 .clients__icon {
   fill: #afb1b8;
-  width: 170px;
+  width: 210px;
   height: 92px;
   padding: 16px 32px;
   border: 2px solid #afb1b8;
@@ -26,5 +38,17 @@
   &:focus {
     fill: var(--accent-color);
     border-color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 210px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 226px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 170px;
   }
 }

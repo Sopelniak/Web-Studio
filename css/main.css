@@ -269,7 +269,6 @@ summary {
 body {
   margin-left: auto;
   margin-right: auto;
-  width: 1600px;
   color: var(--h-text-color);
   background-color: var(--background-color);
   font-family: Roboto, sans-serif;
@@ -302,12 +301,18 @@ p {
 
 .section__title {
   font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   margin-top: 0;
+}
+@media screen and (min-width: 1200px) {
+  .section__title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
 }
 
 .logo {
@@ -323,16 +328,37 @@ p {
 }
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media screen and (min-width: 1200px) {
+  .section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
 }
 
 .conteiner {
   margin-left: auto;
   margin-right: auto;
-  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
+  width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .conteiner {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .conteiner {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .conteiner {
+    width: 1200px;
+  }
 }
 
 .button {
@@ -532,17 +558,15 @@ p {
 }
 
 .hero {
-  text-align: center;
   color: var(--wight-text);
   padding-top: 0;
   padding-bottom: 0;
 }
 
 .hero__conteiner {
+  text-align: center;
   background-color: var(--background-dark-gray);
-  padding-top: 200px;
-  padding-bottom: 200px;
-  height: 600px;
+  padding: 118px 15px;
   margin-left: auto;
   margin-right: auto;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-bg.jpg);
@@ -551,18 +575,43 @@ p {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media screen and (min-width: 480px) {
+  .hero__conteiner {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero__conteiner {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero__conteiner {
+    width: 1600px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
 
 .hero__title {
-  width: 696px;
+  display: block;
+  max-width: 360px;
   margin-top: 0;
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 26px;
+  line-height: 1.62;
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+@media screen and (min-width: 1200px) {
+  .hero__title {
+    max-width: 696px;
+    font-size: 44px;
+    line-height: 1.36;
+  }
 }
 
 .advantage__list {
@@ -572,11 +621,11 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
 }
 
-.advantage__item {
-  width: 270px;
-}
 .advantage__item::before {
   content: "";
   display: block;
@@ -600,14 +649,35 @@ p {
 .advantage__item:nth-child(4)::before {
   background-image: url(../images/advantage-astronaut.svg);
 }
+@media screen and (min-width: 480px) {
+  .advantage__item {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .advantage__item {
+    max-width: 354px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .advantage__item {
+    width: 270px;
+  }
+}
 
 .advantage__name {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
   margin-bottom: 10px;
   margin-top: 0;
+}
+@media screen and (min-width: 768px) {
+  .advantage__name {
+    text-align: left;
+  }
 }
 
 .advantage__specification {
@@ -618,37 +688,41 @@ p {
 }
 
 .activities {
-  padding-top: 0;
+  display: none;
 }
 
-.activities__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media screen and (min-width: 1200px) {
+  .activities {
+    display: block;
+    padding-top: 0;
+  }
+  .activities__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .trend {
+    position: relative;
+  }
+  .trend__title {
+    position: absolute;
+    bottom: 0;
+    width: 370px;
+    margin: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--wight-text);
+    background-color: rgba(47, 48, 58, 0.8);
+  }
 }
-
-.trend {
-  position: relative;
-}
-.trend__title {
-  position: absolute;
-  bottom: 0;
-  width: 370px;
-  margin: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
-  font-size: 14px;
-  line-height: 1.1428571429;
-  text-align: center;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--wight-text);
-  background-color: rgba(47, 48, 58, 0.8);
-}
-
 .teem {
   background-color: var(--background-light-gray);
 }
@@ -657,9 +731,9 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
 }
 
 .employee {
@@ -723,21 +797,35 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
 }
 
 .clients__link {
   display: block;
-  width: 170px;
+  width: 210px;
   height: 92px;
-  gap: 30px;
+}
+@media screen and (min-width: 480px) {
+  .clients__link {
+    width: 210px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .clients__link {
+    width: 226px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .clients__link {
+    width: 170px;
+  }
 }
 
 .clients__icon {
   fill: #afb1b8;
-  width: 170px;
+  width: 210px;
   height: 92px;
   padding: 16px 32px;
   border: 2px solid #afb1b8;
@@ -752,6 +840,21 @@ p {
 .clients__icon:hover, .clients__icon:focus {
   fill: var(--accent-color);
   border-color: var(--accent-color);
+}
+@media screen and (min-width: 480px) {
+  .clients__icon {
+    width: 210px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .clients__icon {
+    width: 226px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .clients__icon {
+    width: 170px;
+  }
 }
 
 .footer {

@@ -1,11 +1,11 @@
 .advantage__list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .advantage__item {
-  width: 270px;
-
   &::before {
     content: '';
     display: block;
@@ -33,6 +33,18 @@
   &:nth-child(4)::before {
     background-image: url(../images/advantage-astronaut.svg);
   }
+
+  @media screen and (min-width: 480px) {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 270px;
+  }
 }
 
 .advantage__name {
@@ -40,10 +52,16 @@
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
 
   margin-bottom: 10px;
   margin-top: 0;
+
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
 }
+
 .advantage__specification {
   font-size: 14px;
   line-height: 1.71;
